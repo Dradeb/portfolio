@@ -4,7 +4,7 @@ $(document).ready(function(){
         threshold: 0.1,
         once: false
     });
-
+    
     //Handle Menu
     $(".menu-item").click(function(){
         $(".menu-item.active").removeClass("active");
@@ -22,7 +22,7 @@ $(document).ready(function(){
         content,
         scrollMode: 'transform',
         direction:'horizontal',
-        emulateScroll: true
+        emulateScroll: true,
     });
 
     // image.addEventListener('load', () => {
@@ -42,4 +42,18 @@ $(document).ready(function(){
     gsap.fromTo(".me-ic-2", {y: -23}, {repeat:-1, repeatDelay: 1,yoyo:true,duration: 4,ease: Power4.easeNone,rotation:6, y: 14});
     gsap.fromTo(".me-ic-3", {y: -30}, {repeat:-1, repeatDelay: 0,yoyo:true,duration: 6,ease: Power4.easeNone,rotation:-6, y: 25});
 
+
+   
+    $("#gotosection-2").click(function () {
+        gsap.to("body",  {backgroundColor: "#00111c", duration: 1, repeat: 0, yoyo: false});
+        gsap.to("#myVideo",  {opacity: .5, duration: 1, repeat: 0, yoyo: false});
+    });
+    $("#gotosection-1").click(function () {
+        gsap.to("#myVideo",  {opacity: 0, duration: 1, repeat: 0, yoyo: false});
+        gsap.to("body",  {backgroundColor: "#ffff", duration: 1, repeat: 0, yoyo: false});
+    });
+    $("#gotosection-3").click(function () {
+        gsap.to("#myVideo",  {opacity: 0, duration: 1, repeat: 0, yoyo: false});
+        gsap.to("body",  {backgroundColor: "#ffff", duration: 1, repeat: 0, yoyo: false});
+    });
 });
