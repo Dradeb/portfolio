@@ -2,82 +2,167 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Youness Dradeb | Creative Developer </title>
+    <title>Youness Dradeb | Creative Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://kit.fontawesome.com/51d1e55fa4.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700&family=Roboto:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/sal.css">
+    <link rel="stylesheet" href="css/slick.css">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <script src="js/jquery-3.5.1.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/luxy.min.js"></script>
-    <!-- <script src="js/momentum.js"></script> -->
-    <script src="js/main.js"></script>
-
 </head>
 <body>
-  
-    <div class="wrapper" id="luxy">
-        <div class="timeline">
+    <section style="display: none;" class="section-1">
+       <div class="container">
+        <div class="row h-100">
+            <div class="col col-6 col-md-6 col-sm-12 ">
+                <h1 class="hello-text"  data-sal="slide-right" data-sal-duration="1000" data-sal-delay="100">Hi,</h1>
+                <h1 class="hello-text"  data-sal="slide-right" data-sal-duration="1000" data-sal-delay="300">I'm Youness</h1>
+                <p class="hello-para"  data-sal="fade" data-sal-duration="1500" data-sal-delay="600"> 
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ex massa, semper tincidunt dui at, pharetra pellentesque turpis. Vestibulum tempus nec odio eu consectetur. 
+                </p>
+                <a class="learnmore" href="" data-sal="slide-up" data-sal-duration="1500" data-sal-delay="700">My skills</a>
+            </div>
+
+            <div class="col col-6 col-md-6 col-sm-12 me-col" data-sal="fade" data-sal-duration="1500" data-sal-delay="600">
+                <div class="me">
+                    <img class="me-ic-1" src="icons/Gamepad_perspective_matte.png" alt="" srcset="">
+                    <img class="me-ic-2" src="icons/Keyboard_perspective_matte.png" alt="" srcset="">
+                    <img class="me-ic-3" src="icons/perspective_matte.png" alt="" srcset="">
+                </div>
+                <div class="me-abs">
+                </div>
+            </div>
         </div>
-        <div class="section section-0 " id="about-me">
-            <div class="circle circle-1"></div>
-            <div class="fluid-container main-container ">
-                <div class="row">
-                    <div class="col">
-                        <h1 class="element-inactive" > HI, I am Youness </h1>
+       </div>
+    </section>
+    <section class="section-1 section-2">
+        <div class="container timeline-container">
+            <h1>SINCE 2014</h1>
+            <h1 class="large-back-title">TIMELINE</h1>
+            <p>  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ex massa, semper tincidunt dui at, pharetra pellentesque turpis. Vestibulum tempus nec odio eu consectetur. </p>
+            <div class="timeline">
+                <div class="timeline-content">
+                    <div class="timeline-date">
+                        <div class="timeline-card lower left">
+                            <div class="horizontal-flex">
+                                <div class="empty-circle"></div>
+                                <p>
+                                    Baccalaureat <br> <span>Experimental Sciences </span>
+                                  
+                                </p>
+                                
+                            </div>
+                        </div>
+                        <div class="start-date">
+                            <p  data-sal="slide-up" data-sal-duration="1000" data-sal-delay="100" >2014</p>
+                            <div class="start-mark"></div>
+                        </div>
+                        <div class="duration"></div>
+                        <div class="duration"></div>
+                        <div class="duration"></div>
                     </div>
-                    <div class="col">
+                    <div class="timeline-date">
+                        <div class="timeline-card upper">
+                            <div class="horizontal-flex">
+                                <div class="empty-circle"></div>
+                                <p>
+                                    Bachelor <br> <span>Databases Administration </span>
+                                    
+                                </p>
+                            </div>
+                            <div class="sepa"></div>
+                            <div class="horizontal-flex">
+                                <a href=""  data-sal="slide-down" data-sal-duration="500" data-sal-delay="100"><i class="fa fa-brands fa-arrow-down"></i></a>
+                                <p class="files">
+                                    Download <br> <span>Final year project report - VF <br>
+                                    A Student Attendance Management System based on facial recognition.
+
+                                    </span>
+
+                                    
+                                </p>
+                            </div>
+                        
+                        </div>
+                        
+                        <div class="start-date">
+                            <p  data-sal="slide-up" data-sal-duration="1000" data-sal-delay="1000" class="lower">2016</p>
+                            <div class="start-mark"></div>
+                        </div>
+                        <div class="duration">
+                        </div>
+                        <div class="duration"></div>
+                    </div>
+                    <div class="timeline-date">
+                        <div class="start-date">
+                            <p  data-sal="slide-up" data-sal-duration="1000" data-sal-delay="1000">2017</p>
+                            <div class="start-mark"></div>
+                        </div>
+                        <div class="duration">
+                        </div>
                     </div>
                 </div>
-
             </div>
             
         </div>
-        <div class="section section-1">
-            <div class="circle circle-2"></div>
-            <div class="fluid-container main-container ">
-                <div class="row">
-                    <div class="col">
-                        <h1 class="element-inactive" > Check out, my portfolio </h1>
-                    </div>
-                    <div class="col">
-                    </div>
-                </div>
+     </section>
+     
 
-            </div>
-        </div>
-        
-        <div class="section section-2">
-            
-            <div class="circle circle-3"></div>
-            <div class="fluid-container main-container ">
-                <div class="row">
-                    <div class="col">
-                        <h1 class="element-inactive" > I can do more </h1>
-                    </div>
-                    <div class="col">
-                    </div>
-                </div>
 
-            </div>
-      
-        </div>
-        <div class="section section-3">
-            
-            <div class="circle circle-4"></div>
-            <div class="fluid-container main-container ">
-                <div class="row">
-                    <div class="col">
-                        <h1 class="element-inactive" > Contact me </h1>
-                    </div>
-                    <div class="col">
-                    </div>
-                </div>
 
-            </div>
-      
+
+
+
+
+
+
+
+
+
+    <div class="menu">
+        <div class="menu-item active">
+            <img src="icons/house.png" alt="" srcset="">
+            <h3>Home</h3>
         </div>
 
+        <div class="menu-item">
+            <img src="icons/profile.png" alt="" srcset="">
+            <h3>About</h3>
+        </div>
 
+        <div class="menu-item">
+            <img src="icons/folder.png" alt="" srcset="">
+            <h3>Projects</h3>
+        </div>
+
+        <div class="menu-item">
+            <img src="icons/love.png" alt="" srcset="">
+            <h3>Goals</h3>
+        </div>
+
+        <div class="menu-item menu-last-item">
+            <img src="icons/chat-box.png" alt="" srcset="">
+            <h3>Contact</h3>
+        </div>
     </div>
+    <div class="social-media-header">
+        
+        <a href=""  data-sal="slide-down" data-sal-duration="500" data-sal-delay="100"><i class="fa fa-brands fa-linkedin"></i></a>
+        <a href="" data-sal="slide-down" data-sal-duration="500" data-sal-delay="300"><i class="fa fa-brands fa-instagram"></i></a>
+        <a href="" data-sal="slide-down" data-sal-duration="500" data-sal-delay="500"><i class="fa fa-brands fa-twitter"></i></a>
+        <a href="" data-sal="slide-down" data-sal-duration="500" data-sal-delay="700"><i class="fa fa-brands fa-github"></i></a>
+        <div class="full-line"></div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="js/gsap.min.js"></script>
+    <script src="js/sal.js"></script>
+    <script src="js/slick.min.js"></script>
+    <script src="js/scrollbooster.min.js"></script>
+    <script src="js/app.js"></script>
 </body>
 </html>
