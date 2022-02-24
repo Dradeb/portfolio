@@ -56,4 +56,25 @@ $(document).ready(function(){
         gsap.to("#myVideo",  {opacity: 0, duration: 1, repeat: 0, yoyo: false});
         gsap.to("body",  {backgroundColor: "#ffff", duration: 1, repeat: 0, yoyo: false});
     });
+
+    var ready = true ;
+    $(".show").click(function(){
+
+        if(!ready)
+            return;
+
+        $(".show.active").removeClass('active');
+        $(this).addClass('active');
+
+        ready = false ;
+        $(".bord").css("transform-origin","left center");
+
+        var tl = gsap.timeline({duration: 0,delay:0, ease: Power4.out, onComplete: function(){ $(".bord").css("transform-origin","right center")}});
+        tl.to("#bord-1", {scaleX:1,duration:.4,delay:0}).to("#bord-2", {scaleX:1,duration:.3,delay:0}).to("#bord-3", {scaleX:1,duration:.2,delay:0});
+        
+        var tl2 = gsap.timeline({duration: 0,delay:1, ease: Power4.out,onComplete: function(){ ready = true}});
+        tl2.to("#bord-1", {scaleX:0,duration:.4,delay:0}).to("#bord-2", {scaleX:0,duration:.3,delay:0}).to("#bord-3", {scaleX:0,duration:.2,delay:0});
+    });
+
+    
 });
