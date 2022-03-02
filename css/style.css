@@ -637,15 +637,17 @@ canvas{
     font-weight: bold;
 }
 .right-content{
-    padding: 5vw;
+    padding: 2vw;
     padding-top: 100px;
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
-    flex-direction: column-reverse;
+    flex-direction: row;
     height: 100%;
     width: 100%;
     position: relative;
+    padding-right: 0px;
+    padding-left: 0px;
     
 }
 .right-content h1{
@@ -698,6 +700,58 @@ canvas{
 
 } 
 
+.swiper {
+    width: 100%;
+    height: 100vh;
+    padding-left: 30px;
+    padding-top: 10vh;
+    padding-bottom:  10vh;
+
+}
+  .swiper-slide{
+      
+    margin-bottom: 20vh;
+    height: 70vh;
+    width: 33.33% !important;
+    background-color: rgb(255, 255, 255);
+    border-radius: 4px;
+    margin-right: 0px;
+    border: 0px; 
+    transition-delay: 2s; 
+     -webkit-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out; 
+    opacity: 0.2;
+    background-color: #252525;
+  }
+  .swiper-scrollbar
+  {
+      transform:  scaleX(0.4);
+      left: 32% !important;
+  }
+  .swiper-scrollbar-drag{
+      background-color: red;
+  }
+  .swiper-slide-active{
+      transform: scale(1.1) !important;
+    box-shadow: 10px 10px 38px rgba(0, 0, 0, 0.123), 10px -10px 12px rgba(0, 0, 0, 0.116);
+    opacity: 1;
+    z-index: 10;
+    background-color: #252525;
+  }
+  .projet-show{
+    -webkit-transition: all 0.4s ease-in-out;
+   transition: all 0.4s ease-in-out; 
+   right: -200px;
+   opacity: 0;
+   
+  }
+  .swiper-slide-active .projet-show{
+    opacity: 1;
+    right: -80px;
+  }
+  .holders{
+    opacity: 0 !important;
+  }
 
 
 @media screen and (max-width:800px) {
@@ -755,5 +809,37 @@ canvas{
         top: 10%;
         transform: rotateZ(30deg);
         z-index: 3 !important;
+    }
+    
+    .right-work{
+        padding-top :0px !important;
+    }
+    .swiper {
+        width: 100%;
+        height: 100vh;
+        padding-left: 30px;
+
+    }
+    .right-content {
+        padding-top: 20px !important;
+    }
+    .swiper-slide{
+        
+        height: 100vh;
+        width: 100vw !important;
+        background-color: #29e;
+        border-radius: 0px;
+        margin-right: 0px;
+        border: 0px; 
+        transition-delay: 2s; 
+        -webkit-transition: all 0.4s ease-in-out;
+        transition: all 0.4s ease-in-out; 
+        opacity: 0.5;
+    }
+    
+  .swiper-slide-active{
+         transform: scale(1.1) !important;
+        box-shadow: 10px 10px 38px rgba(0, 0, 0, 0.123), 10px -10px 12px rgba(0, 0, 0, 0.116);
+        opacity: 1;
     }
 }
