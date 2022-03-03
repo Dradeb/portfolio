@@ -23,7 +23,8 @@ $(document).ready(function(){
         content,
         scrollMode: 'transform',
         direction:'horizontal',
-        emulateScroll: true,
+        emulateScroll: false,
+        shouldScroll :false,
     });
 
     // image.addEventListener('load', () => {
@@ -44,19 +45,61 @@ $(document).ready(function(){
     gsap.fromTo(".me-ic-3", {y: -30}, {repeat:-1, repeatDelay: 0,yoyo:true,duration: 6,ease: Power4.easeNone,rotation:-6, y: 25});
 
 
+    let sect2 = gsap.timeline({
+        // yes, we can add it to an entire timeline!
+        scrollTrigger: {
+          trigger: "#section2",
+          pin: true,   // pin the trigger element while active
+          start: "top top", // when the top of the trigger hits the top of the viewport
+          end: "+=2000", // end after scrolling 500px beyond the start
+          scrub: 1, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
+         
+        }
+      });
+      
+        gsap.to("body",  {backgroundColor: "#00111c",
+        scrollTrigger: {
+            trigger: "#section2",
+            end: "+=100",
+            start: "top top",
+            scrub: true,
+            pinSpacing: false,
+            pin: false
+          }
+        });
+        gsap.to("#myVideo",  {opacity: .5,
+        scrollTrigger: {
+            trigger: "#section2",
+            end: "+=100",
+            start: "top top",
+            scrub: true,
+            pinSpacing: false,
+            pin: false
+          }
+        });
+        
+
+
+      sect2.addLabel("start")
+        .to(".timeline-content",{xPercent: -100 })
+        .addLabel("end");
+        
+
    
-    $("#gotosection-2").click(function () {
-        gsap.to("body",  {backgroundColor: "#00111c", duration: 1, repeat: 0, yoyo: false});
-        gsap.to("#myVideo",  {opacity: .5, duration: 1, repeat: 0, yoyo: false});
-    });
-    $("#gotosection-1").click(function () {
-        gsap.to("#myVideo",  {opacity: 0, duration: 1, repeat: 0, yoyo: false});
-        gsap.to("body",  {backgroundColor: "#ffff", duration: 1, repeat: 0, yoyo: false});
-    });
-    $("#gotosection-3").click(function () {
-        gsap.to("#myVideo",  {opacity: 0, duration: 1, repeat: 0, yoyo: false});
-        gsap.to("body",  {backgroundColor: "#ffff", duration: 1, repeat: 0, yoyo: false});
-    });
+    let sect3 = gsap.timeline({
+        // yes, we can add it to an entire timeline!
+        scrollTrigger: {
+            trigger: "#section3",
+            pin: true,   // pin the trigger element while active
+            start: "top top", // when the top of the trigger hits the top of the viewport
+            end: "+=500", // end after scrolling 500px beyond the start
+            scrub: 1, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
+            
+        }
+        });
+        sect3.addLabel("start")
+        .to("#myVideo",  {opacity: 0, duration: 1, repeat: 0, yoyo: false});
+
 
     var ready = true ;
     $(".show").click(function(){
@@ -77,16 +120,40 @@ $(document).ready(function(){
         tl2.to("#bord-1", {scaleX:0,duration:.4,delay:0}).to("#bord-2", {scaleX:0,duration:.3,delay:0}).to("#bord-3", {scaleX:0,duration:.2,delay:0});
     });
 
-      var max = $( window ).width() <= 800 ? 1 : 3;
+      var max = $( window ).width() <= 800 ? 1 : 5;
+    //   const swiper = new Swiper('.swiper', {
+    //     slidesPerView: max,
+    //     spaceBetween: 0,
+    //     loop:false,
+    //     freeMode: false,
+    //     // pagination: {
+    //     //   el: ".swiper-pagination",
+    //     //   clickable: true,
+    //     // },
+    //     // And if we need scrollbar
+    //     scrollbar: {
+    //       el: '.swiper-scrollbar',
+    //     },
+    //   });
+
+
       const swiper = new Swiper('.swiper', {
+        // Optional parameters
         slidesPerView: max,
-        spaceBetween: 0,
-        loop:false,
-        freeMode: false,
-        // pagination: {
-        //   el: ".swiper-pagination",
-        //   clickable: true,
-        // },
+        direction: 'horizontal',
+        loop: true,
+      
+        // If we need pagination
+        pagination: {
+          el: '.swiper-pagination',
+        },
+      
+        // Navigation arrows
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+      
         // And if we need scrollbar
         scrollbar: {
           el: '.swiper-scrollbar',

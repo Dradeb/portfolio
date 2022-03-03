@@ -9,8 +9,7 @@ body{
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
-    flex-direction: row;
-    overflow-y: hidden;
+    flex-direction: column;
     overflow-x: hidden;
 }
 
@@ -19,7 +18,7 @@ section{
 }
 
 .social-media-header{
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
@@ -71,6 +70,7 @@ section{
     padding-left: 15px;
     padding-right: 15px;
     z-index: 100;
+    display: none;
     
 }
 .menu a{
@@ -157,6 +157,10 @@ section{
 
 .section-1 .row .col{
     height: 100vh;
+}
+
+#section3 .row .col{
+    height: 80vh;
 }
 .section-1 .row .col{
     display: flex;
@@ -306,11 +310,13 @@ canvas{
 #myVideo {
     position: fixed;
     right: 0;
-    bottom: 0;
-    min-width: 100%;
-    min-height: 100%;
+    top: 0;
+    min-width: auto;
+    min-height: 100vh;
+    height: 100vh !important;
     opacity: 0;
     z-index: 0;
+    object-fit: 100% auto ;
     pointer-events: none !important;
 
   }
@@ -516,6 +522,8 @@ canvas{
     align-items: flex-start;
     flex-direction: column;
     padding: 30px;
+    height: fit-content !important;
+    height: 20vh;
 }
 .left-work h1{
     color: white;
@@ -538,6 +546,7 @@ canvas{
     background-image: url('../img/patt.png');
     background-size: 33.33%;
     background-repeat: repeat;
+    width: 100vw !important;
 }
 .bord {
     position: absolute;
@@ -638,12 +647,13 @@ canvas{
 }
 .right-content{
     padding: 2vw;
-    padding-top: 100px;
+    padding-top: 0px !important;
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
     flex-direction: row;
-    height: 100%;
+    height: 80vh !important;
+
     width: 100%;
     position: relative;
     padding-right: 0px;
@@ -685,73 +695,25 @@ canvas{
     margin-right: 30px;
     border: 0px;
 }
-.right-content{
+
+#section2{
+    height: 2000px;
 }
-/* .horizontal-cards{
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    flex-direction: row; 
-}*/
 
-.projects-list
-{
-    width: 100vw;
-
-} 
-
-.swiper {
-    width: 100%;
+#section3{
     height: 100vh;
-    padding-left: 30px;
-    padding-top: 10vh;
-    padding-bottom:  10vh;
-
 }
-  .swiper-slide{
-      
-    margin-bottom: 20vh;
-    height: 70vh;
-    width: 33.33% !important;
-    background-color: rgb(255, 255, 255);
-    border-radius: 4px;
-    margin-right: 0px;
-    border: 0px; 
-    transition-delay: 2s; 
-     -webkit-transition: all 0.4s ease-in-out;
-    transition: all 0.4s ease-in-out; 
-    opacity: 0.2;
-    background-color: #252525;
-  }
-  .swiper-scrollbar
-  {
-      transform:  scaleX(0.4);
-      left: 32% !important;
-  }
-  .swiper-scrollbar-drag{
-      background-color: red;
-  }
-  .swiper-slide-active{
-      transform: scale(1.1) !important;
-    box-shadow: 10px 10px 38px rgba(0, 0, 0, 0.123), 10px -10px 12px rgba(0, 0, 0, 0.116);
-    opacity: 1;
-    z-index: 10;
-    background-color: #252525;
-  }
-  .projet-show{
-    -webkit-transition: all 0.4s ease-in-out;
-   transition: all 0.4s ease-in-out; 
-   right: -200px;
-   opacity: 0;
-   
-  }
-  .swiper-slide-active .projet-show{
-    opacity: 1;
-    right: -80px;
-  }
-  .holders{
-    opacity: 0 !important;
-  }
+
+
+.single-project{
+    min-width: 200px;
+    height: 100%;
+    background-color: #29e;
+    border-left: 1px solid white;
+}
+.swiper{
+    height: 100%;
+}
 
 
 @media screen and (max-width:800px) {
@@ -785,7 +747,10 @@ canvas{
         padding-top: 150px;
         height: fit-content;
     }
-
+    #section3 .row .col{
+        padding-top: 0px;
+        height: fit-content;
+    }
     .me img{
         position: absolute;
         width: 120px;
@@ -819,9 +784,6 @@ canvas{
         height: 100vh;
         padding-left: 30px;
 
-    }
-    .right-content {
-        padding-top: 20px !important;
     }
     .swiper-slide{
         
