@@ -60,8 +60,8 @@ $(document).ready(function(){
         gsap.to("body",  {backgroundColor: "#00111c",
         scrollTrigger: {
             trigger: "#section2",
-            end: "+=100",
-            start: "top top",
+            end: "+=1000",
+            start: "top 80%",
             scrub: true,
             pinSpacing: false,
             pin: false
@@ -70,8 +70,8 @@ $(document).ready(function(){
         gsap.to("#myVideo",  {opacity: .5,
         scrollTrigger: {
             trigger: "#section2",
-            end: "+=100",
-            start: "top top",
+            end: "+=1000",
+            start: "top 80%",
             scrub: true,
             pinSpacing: false,
             pin: false
@@ -120,7 +120,11 @@ $(document).ready(function(){
         tl2.to("#bord-1", {scaleX:0,duration:.4,delay:0}).to("#bord-2", {scaleX:0,duration:.3,delay:0}).to("#bord-3", {scaleX:0,duration:.2,delay:0});
     });
 
-      var max = $( window ).width() <= 800 ? 1 : 5;
+    $(".single-project").click(function()
+    { $(".single-project.active").removeClass("active");
+      $(this).addClass("active");
+    })
+      var max = $( window ).width() <= 800 ? 1 :5;
     //   const swiper = new Swiper('.swiper', {
     //     slidesPerView: max,
     //     spaceBetween: 0,
@@ -137,26 +141,36 @@ $(document).ready(function(){
     //   });
 
 
-      const swiper = new Swiper('.swiper', {
-        // Optional parameters
-        slidesPerView: max,
-        direction: 'horizontal',
-        loop: true,
+      // const swiper = new Swiper('.swiper', {
+      //   // Optional parameters
+      //   slidesPerView: max,
+      //   direction: 'horizontal',
+      //   loop: true,
       
-        // If we need pagination
-        pagination: {
-          el: '.swiper-pagination',
-        },
+      //   // If we need pagination
+      //   pagination: {
+      //     el: '.swiper-pagination',
+      //   },
       
-        // Navigation arrows
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-        },
+      //   // Navigation arrows
+      //   navigation: {
+      //     nextEl: '.swiper-button-next',
+      //     prevEl: '.swiper-button-prev',
+      //   },
       
-        // And if we need scrollbar
-        scrollbar: {
-          el: '.swiper-scrollbar',
-        },
-      });
+      //   // And if we need scrollbar
+      //   scrollbar: {
+      //     el: '.swiper-scrollbar',
+      //   },
+      // });
+
+
+   new ScrollBooster({
+      viewport: document.querySelector('.projects-viewport'),
+      content: document.querySelector('.projects-content'),
+      scrollMode: 'transform', // use CSS 'transform' property
+      direction: 'horizontal', // allow only horizontal scrolling
+      emulateScroll: true,
+    });
+
 });
