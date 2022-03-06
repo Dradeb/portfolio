@@ -120,37 +120,18 @@ $(document).ready(function(){
         tl2.to("#bord-1", {scaleX:0,duration:.4,delay:0}).to("#bord-2", {scaleX:0,duration:.3,delay:0}).to("#bord-3", {scaleX:0,duration:.2,delay:0});
     });
 
-    $(".single-project").click(function()
-    { $(".single-project.active").removeClass("active");
-      $(this).addClass("active");
-    })
-      var max = $( window ).width() <= 800 ? 1 :5;
-    //   const swiper = new Swiper('.swiper', {
-    //     slidesPerView: max,
-    //     spaceBetween: 0,
-    //     loop:false,
-    //     freeMode: false,
-    //     // pagination: {
-    //     //   el: ".swiper-pagination",
-    //     //   clickable: true,
-    //     // },
-    //     // And if we need scrollbar
-    //     scrollbar: {
-    //       el: '.swiper-scrollbar',
-    //     },
-    //   });
-
-
       // const swiper = new Swiper('.swiper', {
       //   // Optional parameters
       //   slidesPerView: max,
       //   direction: 'horizontal',
       //   loop: true,
+      //   spaceBetween: 2,
+      //   // freeMode: true,
       
       //   // If we need pagination
-      //   pagination: {
-      //     el: '.swiper-pagination',
-      //   },
+      //   // pagination: {
+      //   //   el: '.swiper-pagination',
+      //   // },
       
       //   // Navigation arrows
       //   navigation: {
@@ -165,12 +146,23 @@ $(document).ready(function(){
       // });
 
 
-   new ScrollBooster({
-      viewport: document.querySelector('.projects-viewport'),
-      content: document.querySelector('.projects-content'),
-      scrollMode: 'transform', // use CSS 'transform' property
-      direction: 'horizontal', // allow only horizontal scrolling
-      emulateScroll: true,
-    });
+
+      // PORTFOLIO
+
+
+      let pf = gsap.timeline({
+        // yes, we can add it to an entire timeline!
+        scrollTrigger: {
+            trigger: "#section3",
+            pin: false,   // pin the trigger element while active
+            start: "top 30%", // when the top of the trigger hits the top of the viewport
+            end: "+=100", // end after scrolling 500px beyond the start
+            scrub: 1, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
+            
+        }
+        });
+        pf.addLabel("start")
+        .to(".myPortfolio",  {paddingTop: 0, duration: 1, repeat: 0, yoyo: false});
+
 
 });

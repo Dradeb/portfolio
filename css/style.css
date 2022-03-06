@@ -515,26 +515,31 @@ canvas{
 
 .section-3{
     padding: 0px;
-    
     background-image: url("../img/prototype.png");
-    background-size: 13.33%;
+    background-size: 10%;
     background-repeat: repeat;
 }
 .left-work{
-    background-color: #13131300;
+    background-color: #131313;
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
     flex-direction: column;
-    padding: 30px;
+    flex-wrap: wrap;
+    padding: 60px;
+    padding-bottom: 20px;
+    padding-top: 20px;
     height: fit-content !important;
     height: 20vh;
+    margin-left: 30vw;
+
 }
 .left-work h1{
     color: white;
     font-family: 'Roboto';
     text-transform: uppercase;
     position: relative;
+    font-size: 20px;
 }
 
 .left-work h4{
@@ -542,6 +547,7 @@ canvas{
     font-family: 'Roboto';
     position: relative;
     font-weight: 300;
+    font-size: 16px;
 }
 .right-work{
     position: relative;
@@ -670,15 +676,6 @@ canvas{
     position: relative;
     margin-bottom: 30px;
 }
-.right-content h1::after{
-    content: '';
-    position: absolute;
-    bottom: 0;
-    height: 7px;
-    width: 40%;
-    left: 5px;
-    background: #f3c01a;
-}
 
 .right-content p{
     color: #535353;
@@ -721,70 +718,197 @@ canvas{
 .single-project.active{
     width: 550px !important;
 }
-.swiper{
-    height: 100%;
-}
 .projects-viewport{
     position: absolute;
     bottom: 5vh;
-    height: 30vh;
-    width: 80vw;
-    right: 0;
+    height: 80vh;
+    width: 100vw;
+    left: 0;
     background-color: rgba(34, 153, 238, 0);
     overflow-x: hidden;
 }
 .projects-content{
     
-    width: 200vw !important;
     height: 100%;
+    width: fit-content;
      display: flex;
     justify-content: flex-start;
-    align-items: flex-end;
-    padding-left: 10vw;
-    /* background: rgb(232,55,54);
-background: linear-gradient(90deg, rgba(232,55,54,1) 0%, rgba(122,94,189,1) 46%, rgba(139,255,142,1) 100%); */
-}
-.project-desc{
-    height: 80vh;
-    width: 100vw;
-    display: flex;
     align-items: flex-start;
-    justify-content: flex-start;
-    flex-direction: row;
-    padding-left: 2vw;
-    padding-bottom: 5vh;
-    z-index: 10;
-    pointer-events: none;
+    padding-top: 30px;
+    padding-left: 0px;
+    /* background: rgb(232,55,54);
+    background: linear-gradient(90deg, rgba(232,55,54,1) 0%, rgba(122,94,189,1) 46%, rgba(139,255,142,1) 100%); */
 }
-.video-wrapper{
+.bg-holder{
+    -webkit-transition: all 0.1s ease-in-out;
+    transition: all 0.1s ease-in-out;
+    background-position: center;
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    width: 100%;
     height: 100%;
+
 }
-.video-wrapper video{
-    height: 100%;
+
+
+.swiper{
+    height: 75vh;
+    width: 35vw;
+    position: absolute;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.swiper-wrapper{
+    position: relative;
+    height: fit-content;
+}
+
+.swiper-slide{
+    display: flex;
+    justify-content: center !important;
+    align-items: center;
+}
+.swiper-button-next,.swiper-button-prev{
+    
+    display: none;
 }
 .card{
-    width: 200px;
-    height: 250px;
-    margin: 20px;
+    position: relative;
+    width: 10vw;
+    height: 10vw;
+    margin-right: 0px;
+    border-radius: 0px;
     background-color: white;
-    border-radius: 10px;    -webkit-transition: all 0.4s ease-in-out;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    -webkit-transition: all 0.4s ease-in-out;
     transition: all 0.4s ease-in-out;
-}
-
-.card:hover{
-    width: 300px;
-    height: 250;
-    background-color: white;
-    border-radius: 10px;    -webkit-transition: all 0.4s ease-in-out;
-    transition: all 0.4s ease-in-out;
-}
-
-.content-holder{
+    border-radius: 5px;
+    background-size: cover;
+    background-position: center;
     
-    position: absolute;
-     height: 100vh;
-    width: 70vw;
 }
+
+.swiper-slide-active .card{
+    border: 2px solid #f3c01a;
+   box-shadow: 10px 10px 38px rgba(0, 0, 0, 0.123), 10px -10px 12px rgba(0, 0, 0, 0.116);
+   opacity: 1;
+}
+
+.content-desc{
+    height: 70vh;
+    width: 100vw;
+    padding-left: 40px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+.content-text h1{
+    color: rgb(255, 255, 255);
+    text-transform: uppercase;
+    font-family: "Roboto";
+    font-size: 3vw;
+    margin-bottom: 10px;
+}
+
+.content-text p{
+    color: rgb(255, 255, 255);
+    font-family: "Roboto";
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.video-holder{
+    width: 30vw;
+    height: 100%;
+    margin-right: 50px;
+    background-color: #313131;
+    position: fixed;
+    left: 0;
+    top: 0;
+    opacity: 0.8;
+    overflow-x: hidden;
+}
+
+.video-holder video{
+    height: 100%;
+}
+.content-text{
+    width: 60vw;
+    margin-left: 32vw;
+}
+
+.next-project{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: row;
+}
+
+.next-project .next{
+    height: 40px;
+    width: 40px;
+    background-color: #f3c01a;
+    margin-left: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.next-project .prev{
+    height: 40px;
+    width: 40px;
+    background-color: #f3c01a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+
+.next-project .next img{
+    width: 20px;
+    transform: scaleX(-1);
+    filter: invert();
+}
+
+.next-project .prev img{
+    width: 20px;
+    filter: invert();
+}
+
+
+
+
+/* PORTFOLIO */
+
+#section3{
+    padding-top: 40vh;
+}
+.myPortfolio{
+    color: white;
+    font-family: "Roboto";
+    text-transform: uppercase;
+    font-size: 6vw;
+    text-align: center;
+    font-weight: bold;
+    height: 100px;
+    padding-top: 200px;
+    overflow-y: hidden;
+}
+/* END PORTFOLIO */
+
 @media screen and (max-width:800px) {
     canvas{
         
