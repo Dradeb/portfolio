@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-    gsap.registerPlugin(ScrollTrigger);
+    gsap.registerPlugin(ScrollTrigger,MotionPathPlugin);
     sal({
         threshold: 0.1,
         once: false
@@ -90,9 +90,9 @@ $(document).ready(function(){
         // yes, we can add it to an entire timeline!
         scrollTrigger: {
             trigger: "#section3",
-            pin: true,   // pin the trigger element while active
+            pin: false,   // pin the trigger element while active
             start: "top top", // when the top of the trigger hits the top of the viewport
-            end: "+=500", // end after scrolling 500px beyond the start
+            end: "+=200", // end after scrolling 500px beyond the start
             scrub: 1, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
             
         }
@@ -161,8 +161,76 @@ $(document).ready(function(){
             
         }
         });
+
+
         pf.addLabel("start")
         .to(".myPortfolio",  {paddingTop: 0, duration: 1, repeat: 0, yoyo: false});
 
+
+
+        var height = $("#svg-wrapper").height();
+        let sc = gsap.timeline({
+          onComplete: done,
+          // yes, we can add it to an entire timeline!
+          scrollTrigger: {
+              trigger: "#section3",
+              pin: false,   // pin the trigger element while active
+              start: "top top", // when the top of the trigger hits the top of the viewport
+              end: "+="+500, // end after scrolling 500px beyond the start
+              scrub: 2, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
+              
+            },
+          });
+          sc.addLabel("start")
+          .to("#boxy",  {top:"50%"});
+
+
+          // let path = gsap.timeline({
+          //   onComplete: done,
+          //   // yes, we can add it to an entire timeline!
+          //   scrollTrigger: {
+          //       trigger: "#section3",
+          //       pin: false,   // pin the trigger element while active
+          //       start: "top top", // when the top of the trigger hits the top of the viewport
+          //       end: "+="+height, // end after scrolling 500px beyond the start
+          //       scrub: 2, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
+                
+          //     },
+          //   });
+          //   path.addLabel("start")
+          //   .to(".path",  {scaleY:".5 "});
+
+            
+
+
+          let en = gsap.timeline({
+            // yes, we can add it to an entire timeline!
+            scrollTrigger: {
+                trigger: "#section3",
+                pin: false,   // pin the trigger element while active
+                start: "top top", // when the top of the trigger hits the top of the viewport
+                end: "+=100", // end after scrolling 500px beyond the start
+                scrub: 2, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
+             
+              },
+            });
+            en.addLabel("start")
+            .to("#boxy",  {opacity: 1});
+          
+
+
+            
+          function done()
+          {
+            // gsap.to("#boxy",  {opacity: 0});
+          }
+          
+        
+
+          
+          
+            
+              
+  
 
 });

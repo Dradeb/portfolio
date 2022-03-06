@@ -512,13 +512,6 @@ canvas{
 .files{
     font-weight: 500 !important;
 }
-
-.section-3{
-    padding: 0px;
-    background-image: url("../img/prototype.png");
-    background-size: 10%;
-    background-repeat: repeat;
-}
 .left-work{
     background-color: #131313;
     display: flex;
@@ -687,10 +680,6 @@ canvas{
 }
 #section2{
     height: 2000px;
-}
-
-#section3{
-    height: 100vh;
 }
 
 
@@ -894,19 +883,99 @@ canvas{
 /* PORTFOLIO */
 
 #section3{
-    padding-top: 40vh;
+    min-height: 100vh;
+    padding-top: 20vh;
+    height: fit-content !important;
 }
+
+
+
+.section-3{
+    padding: 0px;
+    background-image: url("../img/prototype.png");
+    background-size: 10%;
+    background-repeat: repeat;
+    background-attachment: fixed;
+    position: relative;
+}
+
 .myPortfolio{
     color: white;
     font-family: "Roboto";
     text-transform: uppercase;
-    font-size: 6vw;
+    font-size: 100px;
     text-align: center;
     font-weight: bold;
-    height: 100px;
+    height: 150px;
     padding-top: 200px;
     overflow-y: hidden;
+    margin-bottom: 20vh;
 }
+.svg-wrapper{
+    top: 0;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    height: 100%;
+}
+.svg-wrapper .path{
+    top: 0;
+    position: absolute;
+    left: 50%;
+    height: 100%;
+    width: 2px;
+    transform: translateX(-400%) !important;
+    /* transform: scaleY(0); */
+    transform-origin: top center;
+    background-color: rgb(247, 247, 247);
+}
+.svg-wrapper .box{
+    position: fixed;
+    height: 15px;
+    width: 15px;
+    background-color: white;
+    top: 0;
+    transform: translateX(-45%);
+}
+
+.svg-wrapper svg{
+    /* width: 30px;
+    background-size: contain; */
+}
+.cls-1{
+    height: 300px !important;
+}
+.projects-wrapper{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    width: 100vw;
+}
+.project{
+    height: 400px;
+    width: 200px;
+    background-color: white;
+}
+.project.left{
+    transform: translateX(-100%)
+}
+.project.right{
+    transform: translateX(100%)
+}
+
+#boxy{
+    opacity: 0;
+}
+.game.active{
+    background-color: #45ca34;
+}
+.web.active{
+    background-color: #344fca;
+}
+
 /* END PORTFOLIO */
 
 @media screen and (max-width:800px) {
@@ -930,7 +999,7 @@ canvas{
         z-index: 2;
         width: 60vw;
         height: 60vw;
-        background-color: rgb(255, 179, 80);
+        background-color: #ffb350;
         border-radius: 300px;
         background-image: url(../img/me.png);
         background-size: cover;
