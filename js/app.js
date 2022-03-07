@@ -176,13 +176,13 @@ $(document).ready(function(){
               trigger: "#section3",
               pin: false,   // pin the trigger element while active
               start: "top top", // when the top of the trigger hits the top of the viewport
-              end: "+="+500, // end after scrolling 500px beyond the start
+              end: "+="+height, // end after scrolling 500px beyond the start
               scrub: 2, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
               
             },
           });
           sc.addLabel("start")
-          .to("#boxy",  {top:"50%"});
+          .to("#boxy",  {top:"100%"});
 
 
           // let path = gsap.timeline({
@@ -222,12 +222,39 @@ $(document).ready(function(){
             
           function done()
           {
-            // gsap.to("#boxy",  {opacity: 0});
           }
           
         
 
-          
+          var polys = $("#Layer_1-2 polygon");
+          var randpol = 20;
+
+
+
+          // let pls = gsap.timeline({
+          //   onComplete: ()=>{
+          //     pls.restart();
+          //     alert("done")
+          //    },
+          //   // yes, we can add it to an entire timeline!
+          //   scrollTrigger: {
+          //       trigger: "#section3",
+          //       pin: false,   // pin the trigger element while active
+          //       start: "top top", // when the top of the trigger hits the top of the viewport
+          //       end: "+=100", // end after scrolling 500px beyond the start
+          //       scrub: 2, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
+                
+          //     },
+          //   });
+          //   pls.addLabel("start")
+
+          //   randpol = Math.floor(Math.random() * 200) + 1;
+          //   gsap.to(polys[randpol],  {fill:"red"});
+
+          var r = Math.floor(Math.random() * 100) + 1;
+          gsap.to(polys[r],  {repeat:-1,yoyo:true,duration: 2,ease: Power4.easeNone, fill: "yellow",onComplete:()=>{
+            alert("jihi")
+          }});
           
             
               

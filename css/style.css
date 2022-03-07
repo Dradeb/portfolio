@@ -877,7 +877,17 @@ canvas{
     filter: invert();
 }
 
-
+.bg-plus{
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+    top: 0;
+    
+}
+.bg-plus svg{
+    
+    width: 100%;
+}
 
 
 /* PORTFOLIO */
@@ -892,11 +902,12 @@ canvas{
 
 .section-3{
     padding: 0px;
-    background-image: url("../img/prototype.png");
+    /* background-image: url("../img/background-pattern.png"); */
     background-size: 10%;
     background-repeat: repeat;
     background-attachment: fixed;
     position: relative;
+    background-color: #181820;
 }
 
 .myPortfolio{
@@ -904,21 +915,24 @@ canvas{
     font-family: "Roboto";
     text-transform: uppercase;
     font-size: 100px;
-    text-align: center;
+    text-align: left;
     font-weight: bold;
     height: 150px;
     padding-top: 200px;
     overflow-y: hidden;
     margin-bottom: 20vh;
+    margin-left: 20vw;
 }
 .svg-wrapper{
     top: 0;
-    width: 100vw;
+    width: fit-content;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-start;
+    align-items: flex-start;
     position: absolute;
     height: 100%;
+    left: 15vw;
+
 }
 .svg-wrapper .path{
     top: 0;
@@ -926,7 +940,7 @@ canvas{
     left: 50%;
     height: 100%;
     width: 2px;
-    transform: translateX(-400%) !important;
+    /* transform: translateX(-400%) !important; */
     /* transform: scaleY(0); */
     transform-origin: top center;
     background-color: rgb(247, 247, 247);
@@ -936,7 +950,7 @@ canvas{
     height: 15px;
     width: 15px;
     background-color: white;
-    top: 0;
+    top: 0vh;
     transform: translateX(-45%);
 }
 
@@ -948,22 +962,118 @@ canvas{
     height: 300px !important;
 }
 .projects-wrapper{
+    position: relative;
     display: flex;
     justify-content: flex-start;
-    align-items: center;
+    align-items: flex-start;
     flex-direction: column;
     width: 100vw;
+    margin-left: 15vw;
+    z-index: 2;
 }
 .project{
-    height: 400px;
-    width: 200px;
-    background-color: white;
+    position: relative;
+    height: fit-content;
+    min-width: 300px;
+    background-color: rgba(255, 255, 255, 0);
+    /* border-left: 6px solid #f3c01a; */
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: row;
+    margin-bottom: 50px;
+
 }
+.project-video{
+    /* max-height: 500px; */
+    width: 300px;
+}
+.project-description{
+    padding-left:60px;
+}
+.project-description h1{
+    color: white;
+    font-family: "Roboto";
+    font-weight: bold;
+}
+
+.project-description p{
+    color: white;
+    font-family: "Roboto";
+    font-weight: 300;
+
+    margin: 0px;
+    max-width: 400px;
+}
+
+.project-description p span{
+    color: white;
+    font-family: "Roboto";
+    font-weight: 500;
+    text-transform: uppercase;
+
+    margin: 0px;
+}
+
+.tech-stack{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 600px;
+
+    margin-top: 30px;
+}
+.tech-stack p{
+    margin-right: 10px;
+    background-color: #ffffff60;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 5px;
+
+}
+
+.tryit{
+    margin-top: 10px;
+    height: 40px;
+    width: 40px;
+    border: 2px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    -webkit-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+    overflow: hidden;
+    cursor: pointer;
+}
+.tryit svg{
+    width: 50%;
+    height: 50%;
+    fill: white;
+    cursor: pointer;
+    -webkit-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+}
+.tryit p{
+    width: 0;
+    opacity:0;
+    width: 100px;
+}
+.tryit:hover{
+    transform: rotateZ(180deg);
+}
+
+.tryit:hover svg{
+    transform: rotateZ(-360deg);
+}
+
 .project.left{
-    transform: translateX(-100%)
+    margin-left: 5vw;
 }
 .project.right{
-    transform: translateX(100%)
+    margin-left: 5vw;
 }
 
 #boxy{
@@ -1000,7 +1110,7 @@ canvas{
         width: 60vw;
         height: 60vw;
         background-color: #ffb350;
-        border-radius: 300px;
+          border-radius: 300px;
         background-image: url(../img/me.png);
         background-size: cover;
         background-position: center;
