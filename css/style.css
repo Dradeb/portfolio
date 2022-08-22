@@ -894,7 +894,7 @@ canvas{
 
 #section3{
     min-height: 100vh;
-    padding-top: 20vh;
+    padding-top: 5vh;
     height: fit-content !important;
 }
 
@@ -902,12 +902,12 @@ canvas{
 
 .section-3{
     padding: 0px;
-    /* background-image: url("../img/background-pattern.png"); */
+    background-image: url("../img/prototype.png");
     background-size: 10%;
     background-repeat: repeat;
     background-attachment: fixed;
     position: relative;
-    background-color: #181820;
+    /* background-color: #181820; */
 }
 
 .myPortfolio{
@@ -915,13 +915,12 @@ canvas{
     font-family: "Roboto";
     text-transform: uppercase;
     font-size: 100px;
-    text-align: left;
+    text-align: center;
     font-weight: bold;
     height: 150px;
     padding-top: 200px;
     overflow-y: hidden;
     margin-bottom: 20vh;
-    margin-left: 20vw;
 }
 .svg-wrapper{
     top: 0;
@@ -1086,6 +1085,25 @@ canvas{
     background-color: #344fca;
 }
 
+
+
+
+/* MASONRy */
+
+.grid-sizer,
+.grid-item { width: 30%; }
+.grid-item {
+    margin-bottom: 10px;
+    background-color: white;
+    height: 300px; 
+    width: 30%; 
+}
+.grid-item--width2 { 
+    width: 40%; 
+    height: 300px;
+    margin-right: 0px;
+}
+
 /* END PORTFOLIO */
 
 @media screen and (max-width:800px) {
@@ -1177,3 +1195,90 @@ canvas{
         opacity: 1;
     }
 }
+/* ---- grid-item ---- */
+
+/* ---- grid-item ---- */
+.projects-bricks{
+    
+  margin: 0 auto;
+}
+.grid-item {
+    position: relative;
+    width: 400px;
+    height: 300px;
+    float: left;
+    background: transparent;
+    border: 1px solid #ccc;
+    border-color: hsl(49, 100%, 66%);
+    border-radius: 0px;
+    margin-bottom: 0px !important;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+  }
+
+  .grid-item:hover{
+  }
+
+.grid-item .caption{
+    position: absolute;
+    background: rgb(18,18,18);
+    background: linear-gradient(0deg, rgba(18,18,18,0.7105217086834734) 0%, rgba(19,19,19,0.31556372549019607) 56%, rgba(20,20,20,0) 100%);
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.grid-item .caption p {
+    color: white;
+    font-weight: 300;
+    font-family: 'Cairo';
+}
+
+.tags-wrapper{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: row;
+}
+.tag-shape{
+    font-family: 'Cairo';
+    padding: 4px;
+    min-width: 100px;
+
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    border-radius: 40px;
+    margin-right: 10px;
+    padding-right: 10px;
+    padding-left: 10px;
+
+}
+.tag-shape img{
+    height: 15px;
+    margin-right: 5px;
+}
+
+.tag-shape.game{
+    background-color: #f34d4d;
+    color: white;
+}
+  .grid-item--height2{
+    height: 400px;
+  }
+  
+  .grid-item-portrait{
+    height: 600px;
+  }
+  .grid-item-landscape{
+    height: 300px;
+  }

@@ -1,5 +1,12 @@
 $(document).ready(function(){
 
+
+    $('.projects-bricks').masonry({
+      itemSelector: '.grid-item',
+      columnWidth: 400,
+      isFitWidth: true
+    });
+
     gsap.registerPlugin(ScrollTrigger,MotionPathPlugin);
     sal({
         threshold: 0.1,
@@ -51,7 +58,7 @@ $(document).ready(function(){
           trigger: "#section2",
           pin: true,   // pin the trigger element while active
           start: "top top", // when the top of the trigger hits the top of the viewport
-          end: "+=2000", // end after scrolling 500px beyond the start
+          end: "+=1000", // end after scrolling 500px beyond the start
           scrub: 1, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
          
         }
@@ -168,21 +175,21 @@ $(document).ready(function(){
 
 
 
-        var height = $("#svg-wrapper").height();
-        let sc = gsap.timeline({
-          onComplete: done,
-          // yes, we can add it to an entire timeline!
-          scrollTrigger: {
-              trigger: "#section3",
-              pin: false,   // pin the trigger element while active
-              start: "top top", // when the top of the trigger hits the top of the viewport
-              end: "+="+height, // end after scrolling 500px beyond the start
-              scrub: 2, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
+        // var height = $("#svg-wrapper").height();
+        // let sc = gsap.timeline({
+        //   onComplete: done,
+        //   // yes, we can add it to an entire timeline!
+        //   scrollTrigger: {
+        //       trigger: "#section3",
+        //       pin: false,   // pin the trigger element while active
+        //       start: "top top", // when the top of the trigger hits the top of the viewport
+        //       end: "+="+height, // end after scrolling 500px beyond the start
+        //       scrub: 2, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
               
-            },
-          });
-          sc.addLabel("start")
-          .to("#boxy",  {top:"100%"});
+        //     },
+        //   });
+        //   sc.addLabel("start")
+        //   .to("#boxy",  {top:"100%"});
 
 
           // let path = gsap.timeline({
@@ -203,31 +210,31 @@ $(document).ready(function(){
             
 
 
-          let en = gsap.timeline({
-            // yes, we can add it to an entire timeline!
-            scrollTrigger: {
-                trigger: "#section3",
-                pin: false,   // pin the trigger element while active
-                start: "top top", // when the top of the trigger hits the top of the viewport
-                end: "+=100", // end after scrolling 500px beyond the start
-                scrub: 2, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
+          // let en = gsap.timeline({
+          //   // yes, we can add it to an entire timeline!
+          //   scrollTrigger: {
+          //       trigger: "#section3",
+          //       pin: false,   // pin the trigger element while active
+          //       start: "top top", // when the top of the trigger hits the top of the viewport
+          //       end: "+=100", // end after scrolling 500px beyond the start
+          //       scrub: 2, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
              
-              },
-            });
-            en.addLabel("start")
-            .to("#boxy",  {opacity: 1});
+          //     },
+          //   });
+          //   en.addLabel("start")
+          //   .to("#boxy",  {opacity: 1});
           
 
 
             
-          function done()
-          {
-          }
+          // function done()
+          // {
+          // }
           
         
 
-          var polys = $("#Layer_1-2 polygon");
-          var randpol = 20;
+          // var polys = $("#Layer_1-2 polygon");
+          // var randpol = 20;
 
 
 
@@ -251,13 +258,21 @@ $(document).ready(function(){
           //   randpol = Math.floor(Math.random() * 200) + 1;
           //   gsap.to(polys[randpol],  {fill:"red"});
 
-          var r = Math.floor(Math.random() * 100) + 1;
-          gsap.to(polys[r],  {repeat:-1,yoyo:true,duration: 2,ease: Power4.easeNone, fill: "yellow",onComplete:()=>{
-            alert("jihi")
-          }});
+          // var r = Math.floor(Math.random() * 100) + 1;
+          // gsap.to(polys[r],  {repeat:-1,yoyo:true,duration: 2,ease: Power4.easeNone, fill: "yellow",onComplete:()=>{
+          //   alert("jihi")
+          // }});
           
-            
-              
+          const sizes = [
+            { columns: 2, gutter: 10 },
+            { mq: '768px', columns: 3, gutter: 25 },
+            { mq: '1024px', columns: 4, gutter: 50 }
+          ]
+          
+          const instance = Bricks({
+            container: '.projects-bricks',
+            sizes: sizes
+          })
   
 
 });
