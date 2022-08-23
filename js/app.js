@@ -58,7 +58,7 @@ $(document).ready(function(){
           trigger: "#section2",
           pin: true,   // pin the trigger element while active
           start: "top top", // when the top of the trigger hits the top of the viewport
-          end: "+=1000", // end after scrolling 500px beyond the start
+          end: "+=1500", // end after scrolling 500px beyond the start
           scrub: 1, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
          
         }
@@ -263,16 +263,22 @@ $(document).ready(function(){
           //   alert("jihi")
           // }});
           
-          const sizes = [
-            { columns: 2, gutter: 10 },
-            { mq: '768px', columns: 3, gutter: 25 },
-            { mq: '1024px', columns: 4, gutter: 50 }
-          ]
+        
+        
           
-          const instance = Bricks({
-            container: '.projects-bricks',
-            sizes: sizes
-          })
-  
+          var $grid = $('.projects-bricks').isotope({
+            itemSelector: ".grid-item"
+          });
 
+          $('.filter').on( 'click', function() {
+            $(".filter").removeClass("active");
+
+            $(this).addClass("active");
+            var val = $(this).attr("data-type");
+            if (val !== "*") {
+              val = '[data-type="' + val + '"]';
+            }
+            $grid.isotope({ filter: val });
+
+          });
 });
