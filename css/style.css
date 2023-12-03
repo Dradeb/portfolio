@@ -1576,7 +1576,8 @@ canvas{
     font-family: 'Cairo';
   }
   .phase-details h1 {
-
+    
+    white-space: nowrap;
     font-size: 16px;
     font-family: 'Cairo';
     font-weight: bold;
@@ -1584,6 +1585,8 @@ canvas{
     display: block ruby;
   }
   .phase-details p {
+    
+    white-space: nowrap;
     font-family: 'Cairo';
     font-size: 16px;
     line-height: 20px;
@@ -1639,6 +1642,11 @@ canvas{
        
       }
 
+    .phase-details p{
+    
+        white-space: unset;
+        
+    }  
 
     .my-quote{
 
