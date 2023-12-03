@@ -1,3 +1,5 @@
+
+import { SplitText } from './splitText.js';
 $(document).ready(function(){
 
 
@@ -20,19 +22,48 @@ $(document).ready(function(){
         
     })
 
-    // TIMELINE SLIDER
-    const viewport =document.querySelector('.timeline');
-    const content = document.querySelector('.timeline-content');
-    // const image = document.querySelector('.example3-image');
 
-    const sb = new ScrollBooster({
-        viewport,
-        content,
-        scrollMode: 'transform',
-        direction:'horizontal',
-        emulateScroll: false,
-        shouldScroll :false,
+
+    gsap.utils.toArray('.start-mark-on').forEach((element, index) => {
+      // Create a timeline for each element
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          markers:false,
+          trigger: element,
+          start: 'top center',
+          end:'+=10', // Adjust as needed
+          scrub: 0, // Set to false in production
+          // Add your custom event or animation here
+          onEnter: () => {
+            
+            // Your custom event or animation code goes here
+          },
+        },
+      });
+
+      tl.to(element,{opacity: 1 })
+  
+      // Add your animations to the timeline if needed
+      // tl.from(element, { opacity: 0, y: 50 });
     });
+
+
+
+
+
+    // TIMELINE SLIDER
+    // const viewport =document.querySelector('.timeline');
+    // const content = document.querySelector('.timeline-content');
+    // // const image = document.querySelector('.example3-image');
+
+    // const sb = new ScrollBooster({
+    //     viewport,
+    //     content,
+    //     scrollMode: 'transform',
+    //     direction:'horizontal',
+    //     emulateScroll: false,
+    //     shouldScroll :false,
+    // });
 
     // image.addEventListener('load', () => {
     // // set viewport position to the center of an image
@@ -55,10 +86,10 @@ $(document).ready(function(){
     let sect2 = gsap.timeline({
         // yes, we can add it to an entire timeline!
         scrollTrigger: {
-          trigger: "#section2",
-          pin: true,   // pin the trigger element while active
+          trigger: ".my-quote",
+          pin: false,   // pin the trigger element while active
           start: "top top", // when the top of the trigger hits the top of the viewport
-          end: "+=1500", // end after scrolling 500px beyond the start
+          end: "+=100", // end after scrolling 500px beyond the start
           scrub: 1, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
          
         }
@@ -78,18 +109,16 @@ $(document).ready(function(){
         scrollTrigger: {
             trigger: "#section2",
             end: "+=1000",
-            start: "top 80%",
+            start: "top 20%",
             scrub: true,
             pinSpacing: false,
             pin: false
           }
         });
         
-
-
-      sect2.addLabel("start")
-        .to(".timeline-content",{xPercent: -100 })
-        .addLabel("end");
+      // sect2.addLabel("start")
+      //   .to(".timeline-content",{xPercent: -100 })
+      //   .addLabel("end");
         
 
    
@@ -281,4 +310,42 @@ $(document).ready(function(){
             $grid.isotope({ filter: val });
 
           });
+
+
+
+          let bg = gsap.timeline({
+            // yes, we can add it to an entire timeline!
+            scrollTrigger: {
+                trigger: "#section1",
+                pin: false,   // pin the trigger element while active
+                start: "top top", // when the top of the trigger hits the top of the viewport
+                end: "+=400", // end after scrolling 500px beyond the start
+                scrub: 1, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
+                
+            }
+            });
+
+          bg.to(".quote",  {opacity: 1})
+          
+var text = document.querySelector(".quote-text h1")
+var split = new SplitText(text);
+
+
+gsap.timeline({
+  scrollTrigger: {
+    trigger: ".quote",
+    start: "top 20%",
+    end: "+=4%",
+    pin: false,
+    scrub: 2.75,
+   
+  }
+})
+.set(split.chars, {
+  color: "#ffff",
+  stagger: 0.1,
+}, 0.1);
+
+
+
 });
