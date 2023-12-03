@@ -24,20 +24,37 @@ $(document).ready(function(){
 
 
 
-    gsap.utils.toArray('.start-mark-on').forEach((element, index) => {
+    gsap.utils.toArray('.phase').forEach((element, index) => {
       // Create a timeline for each element
       const tl = gsap.timeline({
         scrollTrigger: {
           markers:false,
           trigger: element,
           start: 'top center',
-          end:'+=10', // Adjust as needed
+          end:'+=500', // Adjust as needed
           scrub: 0, // Set to false in production
           // Add your custom event or animation here
           onEnter: () => {
-            
+            $(element).find(".start-mark-on").css( "opacity", 1 );
+          
+            $(element).find(".event.more").addClass("visible");
+          },
+          onEnterBack: () => {
+            $(element).find(".start-mark-on").css( "opacity", 1 );
+            $(element).find(".event.more").addClass("visible");
             // Your custom event or animation code goes here
           },
+          onLeave:() =>{
+            
+            $(element).find(".start-mark-on").css( "opacity", 0 );
+            
+            $(element).find(".event.more").removeClass("visible");
+          },
+          onLeaveBack:() =>{
+            
+            $(element).find(".start-mark-on").css( "opacity", 0 );
+            $(element).find(".event.more").removeClass("visible");
+          }
         },
       });
 
@@ -156,33 +173,6 @@ $(document).ready(function(){
         tl2.to("#bord-1", {scaleX:0,duration:.4,delay:0}).to("#bord-2", {scaleX:0,duration:.3,delay:0}).to("#bord-3", {scaleX:0,duration:.2,delay:0});
     });
 
-      // const swiper = new Swiper('.swiper', {
-      //   // Optional parameters
-      //   slidesPerView: max,
-      //   direction: 'horizontal',
-      //   loop: true,
-      //   spaceBetween: 2,
-      //   // freeMode: true,
-      
-      //   // If we need pagination
-      //   // pagination: {
-      //   //   el: '.swiper-pagination',
-      //   // },
-      
-      //   // Navigation arrows
-      //   navigation: {
-      //     nextEl: '.swiper-button-next',
-      //     prevEl: '.swiper-button-prev',
-      //   },
-      
-      //   // And if we need scrollbar
-      //   scrollbar: {
-      //     el: '.swiper-scrollbar',
-      //   },
-      // });
-
-
-
       // PORTFOLIO
 
 
@@ -204,94 +194,6 @@ $(document).ready(function(){
 
 
 
-        // var height = $("#svg-wrapper").height();
-        // let sc = gsap.timeline({
-        //   onComplete: done,
-        //   // yes, we can add it to an entire timeline!
-        //   scrollTrigger: {
-        //       trigger: "#section3",
-        //       pin: false,   // pin the trigger element while active
-        //       start: "top top", // when the top of the trigger hits the top of the viewport
-        //       end: "+="+height, // end after scrolling 500px beyond the start
-        //       scrub: 2, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
-              
-        //     },
-        //   });
-        //   sc.addLabel("start")
-        //   .to("#boxy",  {top:"100%"});
-
-
-          // let path = gsap.timeline({
-          //   onComplete: done,
-          //   // yes, we can add it to an entire timeline!
-          //   scrollTrigger: {
-          //       trigger: "#section3",
-          //       pin: false,   // pin the trigger element while active
-          //       start: "top top", // when the top of the trigger hits the top of the viewport
-          //       end: "+="+height, // end after scrolling 500px beyond the start
-          //       scrub: 2, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
-                
-          //     },
-          //   });
-          //   path.addLabel("start")
-          //   .to(".path",  {scaleY:".5 "});
-
-            
-
-
-          // let en = gsap.timeline({
-          //   // yes, we can add it to an entire timeline!
-          //   scrollTrigger: {
-          //       trigger: "#section3",
-          //       pin: false,   // pin the trigger element while active
-          //       start: "top top", // when the top of the trigger hits the top of the viewport
-          //       end: "+=100", // end after scrolling 500px beyond the start
-          //       scrub: 2, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
-             
-          //     },
-          //   });
-          //   en.addLabel("start")
-          //   .to("#boxy",  {opacity: 1});
-          
-
-
-            
-          // function done()
-          // {
-          // }
-          
-        
-
-          // var polys = $("#Layer_1-2 polygon");
-          // var randpol = 20;
-
-
-
-          // let pls = gsap.timeline({
-          //   onComplete: ()=>{
-          //     pls.restart();
-          //     alert("done")
-          //    },
-          //   // yes, we can add it to an entire timeline!
-          //   scrollTrigger: {
-          //       trigger: "#section3",
-          //       pin: false,   // pin the trigger element while active
-          //       start: "top top", // when the top of the trigger hits the top of the viewport
-          //       end: "+=100", // end after scrolling 500px beyond the start
-          //       scrub: 2, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
-                
-          //     },
-          //   });
-          //   pls.addLabel("start")
-
-          //   randpol = Math.floor(Math.random() * 200) + 1;
-          //   gsap.to(polys[randpol],  {fill:"red"});
-
-          // var r = Math.floor(Math.random() * 100) + 1;
-          // gsap.to(polys[r],  {repeat:-1,yoyo:true,duration: 2,ease: Power4.easeNone, fill: "yellow",onComplete:()=>{
-          //   alert("jihi")
-          // }});
-          
         
         
           
