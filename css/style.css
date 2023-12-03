@@ -714,16 +714,6 @@ canvas{
     text-transform: uppercase;
 }
 
-.vertical-timeline{
-    position: relative;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    flex-direction: column;
-    margin-left: 20vw;
-    padding-top: 100px;
-    width: fit-content;
-}
 
 .vertical-line{
     height: 300px;
@@ -1549,6 +1539,15 @@ canvas{
 
   }
 
+  .vertical-timeline{
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 100px;
+    width: fit-content;
+}
   .phase{
     display: flex;
     justify-content: flex-start;
@@ -1630,6 +1629,20 @@ canvas{
 .quote-text h3{
     color: #df9f15;
 }
+
+
+.timeline-details{
+
+    position: fixed;
+    height: 50vh;
+    width: 300px;
+    background-color: white;
+    right: 50px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 8px;
+}
+
 
 @media screen and (max-width:800px) {
 
