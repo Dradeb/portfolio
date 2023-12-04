@@ -37,9 +37,9 @@ let ability4 = [
 let characters = 
 [
   ["The WebWizard","url(../img/ch1.png)","Aka the web developer","He weaves digital enchantments with lines of code to conjure seamless online experiences and magical user interfaces."],
-  ["CSharp-Sorcerer","url(../img/ch2.png)","Aka the dotnet engineer","He casts powerful spells in the mystic language of C# to craft intricate and enchanting applications"],
+  ["CSharp-Sorcerer","url(../img/ch2.png)","Aka the dotnet engineer","He casts powerful spells in the mystic language of C# to craft intricate and enchants applications"],
   ["MobileMaven-000","url(../img/ch3.png)","Aka the mobile developer","A masterful artisan who weaves apps with finesse, transforming ideas into seamless, user-centric experiences"],
-  ["GameGuru","url(../img/ch4.png)","Aka the game developer","He architects virtual worlds and sculpting immersive experiences that captivate hearts and minds."]
+  ["GameGuru","url(../img/ch4.png)","Aka the game developer","He architects virtual worlds and sculpts immersive experiences that captivate hearts and minds."]
 ]
 
 
