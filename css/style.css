@@ -319,7 +319,7 @@ canvas{
     opacity: 0;
     z-index: 0;
     left: 0;
-    max-width: 100vw !important;
+    width: 100% !important;
     object-fit: 100% auto ;
     pointer-events: none !important;
     overflow-x: hidden;
