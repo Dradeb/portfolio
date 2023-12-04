@@ -1,13 +1,50 @@
 
 import { SplitText } from './splitText.js';
+
+
+
+
+
+let ability1 = [
+  ['JavaScript , Html , Css', 100],
+  ['ASP Net', 80],
+  ['Next js', 60 ],
+  ['Mssql, Oracle, Mysql, MongoDB', 80],
+  ['Git, Svn', 80]
+];
+let ability2 = [
+  ['C# ,. Net Core , ASP .Net', 90],
+  ['Linq , Entity Framework', 80],
+  ['WPF , WCF', 100],
+  ['Razor, Blazor', 70],
+  ['Jenkins, Fortify, SonarQube', 70]
+];
+
+let ability3 = [
+  ['Java ', 60],
+  ['Dart , Flutter', 60]
+];
+
+let ability4 = [
+  ['Unity 3D', 90],
+  ['Unreal', 30],
+  ['Blender', 40],
+  ['AR Foundation, ARKIT, ARCORE', 40],
+];
+
+
+
+let characters = 
+[
+  ["The WebWizard","url(../img/ch1.png)","Aka the web developer","He weaves digital enchantments with lines of code to conjure seamless online experiences and magical user interfaces."],
+  ["CSharp-Sorcerer","url(../img/ch2.png)","Aka the dotnet engineer","He casts powerful spells in the mystic language of C# to craft intricate and enchanting applications"],
+  ["MobileMaven-000","url(../img/ch3.png)","Aka the mobile developer","A masterful artisan who weaves apps with finesse, transforming ideas into seamless, user-centric experiences"],
+  ["GameGuru","url(../img/ch4.png)","Aka the game developer","He architects virtual worlds and sculpting immersive experiences that captivate hearts and minds."]
+]
+
+
 $(document).ready(function(){
 
-
-    $('.projects-bricks').masonry({
-      itemSelector: '.grid-item',
-      columnWidth: 400,
-      isFitWidth: true
-    });
 
     gsap.registerPlugin(ScrollTrigger,MotionPathPlugin);
     sal({
@@ -66,31 +103,6 @@ $(document).ready(function(){
 
 
 
-
-
-    // TIMELINE SLIDER
-    // const viewport =document.querySelector('.timeline');
-    // const content = document.querySelector('.timeline-content');
-    // // const image = document.querySelector('.example3-image');
-
-    // const sb = new ScrollBooster({
-    //     viewport,
-    //     content,
-    //     scrollMode: 'transform',
-    //     direction:'horizontal',
-    //     emulateScroll: false,
-    //     shouldScroll :false,
-    // });
-
-    // image.addEventListener('load', () => {
-    // // set viewport position to the center of an image
-    // const offsetX = image.scrollWidth - viewport.offsetWidth;
-    // const offsetY = image.scrollHeight - viewport.offsetHeight;
-    // sb.setPosition({
-    //     x: offsetX / 2,
-    //     y: offsetY / 2
-    // });
-    // });
           
 
     //Gsap Animations -- section-1 
@@ -100,17 +112,7 @@ $(document).ready(function(){
     gsap.fromTo(".me-ic-3", {y: -30}, {repeat:-1, repeatDelay: 0,yoyo:true,duration: 6,ease: Power4.easeNone,rotation:-6, y: 25});
 
 
-    let sect2 = gsap.timeline({
-        // yes, we can add it to an entire timeline!
-        scrollTrigger: {
-          trigger: ".my-quote",
-          pin: false,   // pin the trigger element while active
-          start: "top top", // when the top of the trigger hits the top of the viewport
-          end: "+=100", // end after scrolling 500px beyond the start
-          scrub: 1, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
-         
-        }
-      });
+   
       
         gsap.to("body",  {backgroundColor: "#00111c",
         scrollTrigger: {
@@ -136,23 +138,6 @@ $(document).ready(function(){
       // sect2.addLabel("start")
       //   .to(".timeline-content",{xPercent: -100 })
       //   .addLabel("end");
-        
-
-   
-    let sect3 = gsap.timeline({
-        // yes, we can add it to an entire timeline!
-        scrollTrigger: {
-            trigger: "#section3",
-            pin: false,   // pin the trigger element while active
-            start: "top top", // when the top of the trigger hits the top of the viewport
-            end: "+=200", // end after scrolling 500px beyond the start
-            scrub: 1, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
-            
-        }
-        });
-        sect3.addLabel("start")
-        .to("#myVideo",  {opacity: 0, duration: 1, repeat: 0, yoyo: false});
-
 
     var ready = true ;
     $(".show").click(function(){
@@ -173,45 +158,7 @@ $(document).ready(function(){
         tl2.to("#bord-1", {scaleX:0,duration:.4,delay:0}).to("#bord-2", {scaleX:0,duration:.3,delay:0}).to("#bord-3", {scaleX:0,duration:.2,delay:0});
     });
 
-      // PORTFOLIO
 
-
-      let pf = gsap.timeline({
-        // yes, we can add it to an entire timeline!
-        scrollTrigger: {
-            trigger: "#section3",
-            pin: false,   // pin the trigger element while active
-            start: "top 30%", // when the top of the trigger hits the top of the viewport
-            end: "+=100", // end after scrolling 500px beyond the start
-            scrub: 1, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
-            
-        }
-        });
-
-
-        pf.addLabel("start")
-        .to(".myPortfolio",  {paddingTop: 0, duration: 1, repeat: 0, yoyo: false});
-
-
-
-        
-        
-          
-          var $grid = $('.projects-bricks').isotope({
-            itemSelector: ".grid-item"
-          });
-
-          $('.filter').on( 'click', function() {
-            $(".filter").removeClass("active");
-
-            $(this).addClass("active");
-            var val = $(this).attr("data-type");
-            if (val !== "*") {
-              val = '[data-type="' + val + '"]';
-            }
-            $grid.isotope({ filter: val });
-
-          });
 
 
 
@@ -248,6 +195,144 @@ gsap.timeline({
   stagger: 0.1,
 }, 0.1);
 
+gsap.timeline({
+  scrollTrigger: {
+    trigger: ".quote",
+    onEnter: () => {
+      $(".navigationElement.active").trigger( "click" );
+
+    },
+   
+  }
+})
+
+
+
+
+$(".navigationElement").click(function(){
+
+    $(".navigationElement").removeClass("active");
+    $(this).addClass("active");
+    var ab = $(this).attr("ability")
+    loadCharacter(ab);
+});
+
+
 
 
 });
+
+
+
+function loadCharacter(characterIndex)
+{
+
+  var ability
+  switch (characterIndex) {
+    case "1":
+      ability = ability1
+      break;
+    case "2":
+      ability = ability2
+      break;
+    case "3":
+      ability = ability3
+      break;
+    case "4":
+      ability = ability4
+      break;
+  
+    default:
+      break;
+  }
+  
+
+
+
+  var characterName = $("#cname");
+  var characterAka = $("#caka");
+  var characterdesc = $("#cdesc");
+  var characterAbs = $("#cabilities")
+  var index  = 0 ;
+  $("#cabilities").html("");
+
+
+  ability.forEach(element => {
+
+      index++;
+      var ch = characters[characterIndex-1];
+    
+       // Create with jQuery
+
+      
+       characterName.html("");
+       characterName.append("<h1 class='character-name' data-sal='slide-right' data-sal-duration='500' data-sal-delay='100' id='cname'>"+ch[0]+"</h1>")
+
+
+       characterAka.html("");
+       characterAka.append("<h3 class='character-aka' data-sal='slide-right' data-sal-duration='500' data-sal-delay='300' id='caka'>"+ch[2]+"</h3>")
+
+      var desc = ch[3];
+
+       characterdesc.html("");
+       characterdesc.append("<p class='character-text' data-sal='slide-up' data-sal-duration='500' data-sal-delay='500' id='cdesc'>"+
+        desc
+      +"</p> ")
+
+
+
+       var ability = $("<div class='ability' ></div>") ;
+       
+
+       var name = $("<h6  data-sal='slide-right' data-sal-duration='500' data-sal-delay='"+index+"00'>"+element[0]+"</h6>") ;
+
+      
+       var damage =$("<div class='damage'></div>") ;
+      
+
+       $(".full-character").removeClass("active"); 
+
+       var val = $("<div class='value' max='"+element[1]+"'></div>");
+       
+
+
+
+
+      // var val = "<div class='value' style=' width:"+element[1]+"%;' ></div>";
+      $("#cabilities").append(ability)
+      ability.append(name);
+      ability.append(damage);
+      damage.append(val);
+      loadbars(characterIndex-1);
+      // $(".full-character").addClass("active");
+  
+  });
+
+ 
+  function loadbars(index)
+  {
+    const vals = gsap.utils.toArray('.value');
+    vals.forEach(v => {
+      gsap.fromTo(v, { 
+        width:"0%",
+        },
+        {
+          width : v.getAttribute("max")+"%",
+          onComplete: showCharacter(index)
+        }
+      )
+    });
+  
+  }
+
+  function showCharacter(index){
+    $(".full-character").css("background-image",characters[index][1]);       
+    $(".full-character").addClass("active");
+  }
+
+  sal();
+
+
+  
+
+}
