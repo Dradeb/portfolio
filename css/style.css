@@ -261,6 +261,7 @@ canvas{
     z-index: 1;
 }
 .learnmore{
+    z-index: 111 !important;
     margin-top: 10px;
     padding: 10px;
     padding-left: 30px;
@@ -277,6 +278,7 @@ canvas{
     transition: font-size 0.4s ease-in-out;
     font-weight: bold;
     letter-spacing: 2px;
+    cursor: pointer;
 }
 .learnmore:hover{
     box-shadow: none;
@@ -1819,6 +1821,72 @@ canvas{
   .navigationElement:hover{
     background-color: red;
   }
+.title-discover{
+    text-align: center;
+    font-weight: bold;
+    font-family: "Cairo";
+    text-transform: uppercase;
+    color: indianred;
+}
+
+.title-small{
+    color: white;
+}
+
+
+.leftab{
+    height: 30px;
+    width: 30px;
+    background-image: url(/img/arr.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+.rightab{
+    height: 30px;
+    width: 30px;
+    background-image: url(/img/arr.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    transform: scaleX(-1);
+    cursor: pointer;
+}
+
+.downloadcv{
+    border: 1px solid black;
+    border-radius: 4px;
+    background-color: transparent;
+
+
+    
+    z-index: 111 !important;
+    margin-top: 10px;
+    padding: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border-radius: 5px;
+    background-color: #f34d4d00;
+    color: rgb(0, 0, 0);
+    font-family: "Cairo";
+    text-decoration: none;
+    text-transform: uppercase;
+    text-decoration: none;
+    box-shadow: none;
+    -webkit-transition: font-size 0.4s ease-in-out;
+    transition: font-size 0.4s ease-in-out;
+    font-weight: bold;
+    letter-spacing: 2px;
+    cursor: pointer;
+    margin-left: 20px;
+
+    
+}
+
+.dresume{
+    margin-top: 20px !important;
+}
+
 
 @media screen and (max-width:800px) {
 
@@ -1887,7 +1955,6 @@ canvas{
         margin-top: 30px;
         margin-left: 00px;
     }
-
 
     
   .full-character{

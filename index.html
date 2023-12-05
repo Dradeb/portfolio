@@ -83,9 +83,9 @@
 <body>
     <section id="section1" class="section-1">
         
-       <div class="container-fluid"  style="pointer-events: none;" >
+       <div class="container-fluid">
            
-        <div class="row h-100" style="pointer-events: none;">
+        <div class="row h-100">
             <div class="col col-6 col-md-6 col-sm-12 ">
                 <h1 class="hello-text"  data-sal="slide-right" data-sal-duration="1000" data-sal-delay="100">Hi,</h1>
                 <h1 class="hello-text"  data-sal="slide-right" data-sal-duration="1000" data-sal-delay="300">I'm Youness</h1>
@@ -93,7 +93,12 @@
                     Once, I had a fever dream in which I was a JavaScript script full of errors; that's the depth of my coding immersion. I'm Youness Dradeb, an accomplished multi-disciplined developer with over 6 years of expertise in desktop, mobile, and web technologies.
 
                 </p>
-                <a class="learnmore" href="" data-sal="slide-up" data-sal-duration="1500" data-sal-delay="700">My skills</a>
+
+                <div class="dresume">
+
+                    <a class="learnmore" id="mskills" data-sal="slide-up" data-sal-duration="1500" data-sal-delay="700">My skills</a>
+                    <a class="downloadcv" href="YounessDradebResume.pdf" target="_blank" id="mskills" data-sal="slide-up" data-sal-duration="1500" data-sal-delay="700">Resume <i class="fa fa-brands fa-download"></i></a>
+                </div>
             </div>
 
             <div class="col col-6 col-md-6 col-sm-12 me-col" data-sal="fade" data-sal-duration="1500" data-sal-delay="600">
@@ -412,72 +417,9 @@
         <div class="container">
             <div class="row" style="display: flex; justify-content: center; align-items: center;">
                 
-                <div class="col-md-5 characters-main-wrapper" style="display: none;">
-                    <h2 class="select-character">SELECT YOUR CHARACTER</h2>
-                    <div class="characters-wrapper">
-                        <div class="characters-box">
-                            <!-- <video autoplay muted loop class="giph">
-                                <source src="img/GIF/1.mp4" type="video/mp4">
-                            </video> -->
-                            <div class="character-img" style="background-image:url('img/me5.png') ;"></div>
+                <h1 class="title-discover">Discover my abilities</h1>
+                <h6 class="title-discover title-small">LVL 27</h6>
 
-                        </div>
-                        <div class="characters-box">
-                            <!-- <video autoplay muted loop class="giph">
-                                <source src="img/GIF/2.mp4" type="video/mp4">
-                            </video> -->
-                            <div class="character-img" style="background-image:url('img/me4.png') ;"></div>
-
-                        </div>
-                        <div class="characters-box">
-                            <!-- <video autoplay muted loop class="giph">
-                                <source src="img/GIF/3.mp4" type="video/mp4">
-                            </video> -->
-                            <div class="character-img" style="background-image:url('img/me6.png') ;"></div>
-
-                        </div>
-                        <div class="characters-box">
-                            <!-- <video autoplay muted loop class="giph">
-                                <source src="img/GIF/4.mp4" type="video/mp4">
-                            </video> -->
-                            <div class="character-img" style="background-image:url('img/me.png') ;"></div>
-
-                        </div>
-                        <div class="characters-box">
-                            <!-- <video autoplay muted loop class="giph active">
-                                <source src="img/GIF/0.mp4" type="video/mp4">
-                            </video> -->
-                           
-                        </div>
-                        <div class="characters-box">
-                            <!-- <video autoplay muted loop class="giph">
-                                <source src="img/GIF/5.mp4" type="video/mp4">
-                            </video> -->
-                            <div class="character-img" style="background-image:url('img/me.png') ;"></div>
-
-                        </div>
-                        <div class="characters-box">
-                            <!-- <video autoplay muted loop class="giph">
-                                <source src="img/GIF/6.mp4" type="video/mp4">
-                            </video> -->
-                            <div class="character-img" style="background-image:url('img/me.png') ;"></div>
-
-                        </div>
-                        <div class="characters-box">
-                            <!-- <video autoplay muted loop class="giph">
-                                <source src="img/GIF/7.mp4" type="video/mp4">
-                            </video> -->
-                            <div class="character-img" style="background-image:url('img/me.png') ;"></div>
-                        </div>
-                        <div class="characters-box">
-                            <!-- <video autoplay muted loop class="giph">
-                                <source src="img/GIF/8.mp4" type="video/mp4">
-                            </video> -->
-                            <div class="character-img" style="background-image:url('img/me.png') ;"></div>
-
-                        </div>
-                    </div>
-                </div>
                 
                 <div class="col-md-7 character-description">
                     <div class="full-image-holder">
@@ -533,12 +475,14 @@
             </div>
             <div class="row navigationwrapper">
                 <div class="navigationbuttons">
-                    <div class="navigationElement active" ability="1">
+                    <div class="leftab"></div>
+                    <div class="navigationElement active" ability="1" index="0">
                     </div>
-                    <div class="navigationElement" ability="2"></div>
-                    <div class="navigationElement" ability="3"></div>
-                    <div class="navigationElement" ability="4"></div>
+                    <div class="navigationElement" ability="2" index="1"></div>
+                    <div class="navigationElement" ability="3" index="2"></div>
+                    <div class="navigationElement" ability="4" index="3"></div>
 
+                    <div class="rightab"></div>
                 </div>
             </div>
         </div>
@@ -588,10 +532,10 @@
     </div>
     <div class="social-media-header">
         
-        <a href=""  data-sal="slide-down" data-sal-duration="500" data-sal-delay="100"><i class="fa fa-brands fa-linkedin"></i></a>
-        <a href="" data-sal="slide-down" data-sal-duration="500" data-sal-delay="300"><i class="fa fa-brands fa-instagram"></i></a>
-        <a href="" data-sal="slide-down" data-sal-duration="500" data-sal-delay="500"><i class="fa fa-brands fa-twitter"></i></a>
-        <a href="" data-sal="slide-down" data-sal-duration="500" data-sal-delay="700"><i class="fa fa-brands fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/youness-dradeb-420b63101/" target="_blank"  data-sal="slide-down" data-sal-duration="500" data-sal-delay="100"><i class="fa fa-brands fa-linkedin"></i></a>
+        <a href="https://www.instagram.com/younessdradeb/" target="_blank"  data-sal="slide-down" data-sal-duration="500" data-sal-delay="300"><i class="fa fa-brands fa-instagram"></i></a>
+        <a href="https://twitter.com/Dradeb_Youness" target="_blank"  data-sal="slide-down" data-sal-duration="500" data-sal-delay="500"><i class="fa fa-brands fa-twitter"></i></a>
+        <a href="https://github.com/Dradeb" target="_blank"  data-sal="slide-down" data-sal-duration="500" data-sal-delay="700"><i class="fa fa-brands fa-github"></i></a>
         <div class="full-line"></div>
     </div>
     

@@ -46,6 +46,40 @@ let characters =
 $(document).ready(function(){
 
 
+    $("#mskills").click(function(){
+      
+      $('html, body').animate({
+        scrollTop: $("#section4").offset().top
+    }, 2000);
+
+    });
+
+
+    var index = 0;
+    $(".leftab").click(function(){
+
+      var active = $(".navigationElement.active").attr("index");
+      active = parseInt(active);
+
+      active--;
+      if(active < 0)
+        active = 3;
+      $(".navigationElement[index="+active+"]").trigger("click");
+
+    });
+
+    $(".rightab").click(function(){
+
+      var active = $(".navigationElement.active").attr("index");
+      active = parseInt(active);
+
+      active++;
+      if(active > 3)
+        active = 0;
+      $(".navigationElement[index="+active+"]").trigger("click");
+
+    });
+
     gsap.registerPlugin(ScrollTrigger,MotionPathPlugin);
     sal({
         threshold: 0.1,
