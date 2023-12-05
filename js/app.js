@@ -50,7 +50,7 @@ $(document).ready(function(){
       
       $('html, body').animate({
         scrollTop: $("#section4").offset().top
-    }, 2000);
+    }, 500);
 
     });
 
