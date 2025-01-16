@@ -360,7 +360,7 @@ function loadCharacter(characterIndex)
   }
 
   function showCharacter(index){
-    $(".full-character").css("background-image",characters[index][1]);       
+    $(".full-character").css("background-image",characters[index][1].replace(/["']/g, ""));       
     $(".full-character").addClass("active");
   }
 
